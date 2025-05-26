@@ -10,19 +10,18 @@ interface IBusinessSteps {
 }
 
 export const test = base.extend<IBusinessSteps>({
-  loginAsLocalUser: async ({ page, homePage }, use) => {
+  loginAsLocalUser: async ({ signInPage, homePage }, use) => {
     await use(async () => {
-      await page.goto(SALES_PORTAL_URL);
-      await page.locator("#emailinput").fill(USER_LOGIN);
-      await page.locator("#passwordinput").fill(USER_PASSWORD);
-      await page.getByRole("button", { name: "Login" }).click();
+      await signInPage.openPortal();
+      await signInPage.fillCredentials({ email: USER_LOGIN, password: USER_PASSWORD });
+      await signInPage.clickLogin();
       await homePage.waitForOpened();
     });
   },
 
-  createNewCustomer: async ({ homePage, addNewCustomerPage, customersPage }, use) => {
+  createNewCustomer: async ({ addNewCustomerPage, customersPage, sideMenu }, use) => {
     await use(async (params?: Partial<ICustomer>) => {
-      await homePage.clickModuleButton('Customers');
+      await sideMenu.clickMenuItem('Customers');
       await customersPage.waitForOpened();
       await customersPage.clickAddNewCustomer();
       await addNewCustomerPage.waitForOpened();
