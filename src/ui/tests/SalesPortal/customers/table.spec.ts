@@ -6,18 +6,20 @@ import _ from "lodash";
 import { AddNewCustomerPage } from "ui/pages/customers/addNewCustomer.page";
 import { CustomersPage } from "ui/pages/customers/customers.page";
 import { HomePage } from "ui/pages/home.page";
+import { SALES_PORTAL_URL, USER_LOGIN, USER_PASSWORD } from "config/environment";
+import { SignInPage } from "ui/pages/signIn.page";
 
 
 test.describe("[UI] [Sales Portal] [Customers]", async () => {
   test("Should check created customer in table", async ({ page }) => {
     //Precondition
+    const signInPage = new SignInPage(page);
     const homePage = new HomePage(page);
     const customersPage = new CustomersPage(page);
     const addNewCustomerPage = new AddNewCustomerPage(page);
-    await page.goto("https://anatoly-karpovich.github.io/aqa-course-project/#");
-    await page.locator("#emailinput").fill("test@gmail.com");
-    await page.locator("#passwordinput").fill("12345678");
-    await page.getByRole("button", { name: "Login" }).click();
+    await page.goto(SALES_PORTAL_URL);
+    await signInPage.fillCredentials(USER_LOGIN, USER_PASSWORD);
+    await signInPage.clickLogin();
 
     await homePage.waitForOpened();
     await homePage.clickModuleButton("Customers");

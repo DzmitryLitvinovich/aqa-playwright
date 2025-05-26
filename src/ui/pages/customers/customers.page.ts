@@ -2,9 +2,11 @@ import { ICustomer,  ICustomerInTable } from "types/customer.types";
 import { SalesPortalPage } from "../salesPortal.page";
 import { FilterModal } from "../modals/customers/filter.modal";
 import { COUNTRIES } from "data/customers/countries.data";
+import { DeleteCustomerModal } from "../modals/customers/deleteCustomer.modal";
 
 export class CustomersPage extends SalesPortalPage {
   readonly filterModal = new FilterModal(this.page);
+  readonly deleteModal = new DeleteCustomerModal(this.page);
 
   readonly addNewCustomerButton = this.page.getByRole("button", { name: "Add Customer" });
 
@@ -93,5 +95,9 @@ export class CustomersPage extends SalesPortalPage {
       });
     }
     return tableData;
+  }
+
+  async isCustomerInTable(customerEmail: string): Promise<boolean> {
+    return (await this.tableRowByEmail(customerEmail).count()) > 0;
   }
 }
