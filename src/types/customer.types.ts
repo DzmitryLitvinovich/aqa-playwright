@@ -12,4 +12,4 @@ export interface ICustomer {
   notes?: string;
 }
 
-export type TCustomerInTable = Pick<ICustomer, "email" | "name" | "country">;
+export type ICustomerInTable = Pick<ICustomer, "email" | "country" | "name">;
