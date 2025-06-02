@@ -7,6 +7,7 @@ import { STATUS_CODES } from "data/statusCodes";
 import _ from "lodash";
 import { validateResponse } from "utils/validations/responseValidation";
 import { validateSchema } from "utils/validations/schemaValidation";
+import { ICredentials } from "types/signIn.types";
 
 test.describe("[API] [Customers] [Create]", () => {
   let id = "";
@@ -71,17 +72,15 @@ test.describe("[API] [Customers] [Create]", () => {
     */
   });
 
-  test("Create customer with smoke data and Controller", async ({ request, customersController }) => {
-    const loginResponse = await request.post(apiConfig.BASE_URL + apiConfig.ENDPOINTS.LOGIN, {
-      data: { username: USER_LOGIN, password: USER_PASSWORD },
-      headers: {
-        "content-type": "application/json",
-      },
-    });
+  test("Create customer with smoke data and with controllers", async ({ signInController, customersController }) => {
+    const credentials: ICredentials = {
+      username: USER_LOGIN,
+      password: USER_PASSWORD,
+    };
+    const loginResponse = await signInController.login(credentials);
 
-    const headers = loginResponse.headers();
-    token = headers["authorization"];
-    const body = await loginResponse.json();
+    token = loginResponse.headers["authorization"];
+    const body = loginResponse;
     const expectedUser = {
       _id: "6807d046d006ba3d475fcf20",
       username: "dmitrylitvinovich@gmail.com",
@@ -90,25 +89,23 @@ test.describe("[API] [Customers] [Create]", () => {
       roles: ["USER"],
       createdOn: "2025/04/22 17:22:14",
     };
-    
+
     expect.soft(token).toBeTruthy();
-    expect.soft(body.User).toMatchObject(expectedUser);
-
-    const wrappedLoginResponse = {
-    status: loginResponse.status(),
-    headers: loginResponse.headers(),
-    body: body
-    };
-
-    validateResponse(wrappedLoginResponse, STATUS_CODES.OK, true,null);
+    expect.soft(body.body.User).toMatchObject(expectedUser);
+    validateResponse(body, STATUS_CODES.OK, true, null);
 
     const customerData = generateCustomerData();
-    const customerResponse = await customersController.create(customerData, token);
+    const customerResponse = await customersController.create(
+      customerData,
+      token
+    );
     id = customerResponse.body.Customer._id;
 
     validateSchema(customerSchema, customerResponse.body);
     validateResponse(customerResponse, STATUS_CODES.CREATED, true, null);
-    expect.soft(customerResponse.body.Customer).toMatchObject({ ...customerData });
+    expect
+      .soft(customerResponse.body.Customer)
+      .toMatchObject({ ...customerData });
   });
 
   test.afterEach(async ({ customersController }) => {

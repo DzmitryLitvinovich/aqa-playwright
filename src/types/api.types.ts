@@ -8,11 +8,25 @@ export interface IRequestOptions {
 
 export interface IResponse<T extends object | null> {
   status: number;
-  headers: object;
+  //headers: object;
+  headers: Record<string, string>;
   body: T;
 }
 
 export interface IResponseFields {
   IsSuccess: boolean;
   ErrorMessage: string | null;
+}
+
+export interface IUser {
+  _id: string;
+  username: string;
+  firstName: string;
+  lastName: string;
+  createdOn: string;
+  roles: string[];
+}
+
+export interface ILoginResponse extends IResponseFields {
+  User: IUser;
 }
