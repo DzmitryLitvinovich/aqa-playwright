@@ -2,6 +2,7 @@ import { Page, test as base } from "@playwright/test";
 import { apiConfig } from "config/api-config";
 import { STATUS_CODES } from "data/statusCodes";
 import { ICustomerResponse, ICustomersResponse } from "types/customer.types";
+import { IMetricsResponse } from "types/metrics.types";
 
 class Mock {
   constructor(private page: Page) {}
@@ -21,6 +22,16 @@ class Mock {
       await route.fulfill({
         status: statusCode,
         contentType: "application/json",
+        body: JSON.stringify(body),
+      });
+    });
+  }
+  
+  async metrics(body: IMetricsResponse, statusCode: STATUS_CODES = STATUS_CODES.OK) {
+    this.page.route(apiConfig.BASE_URL + '/' + apiConfig.ENDPOINTS.METRICS, async (route) => {
+      await route.fulfill({
+        status: statusCode,
+        contentType: 'application/json',
         body: JSON.stringify(body),
       });
     });
