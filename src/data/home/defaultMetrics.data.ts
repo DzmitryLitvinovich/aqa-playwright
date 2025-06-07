@@ -16,7 +16,7 @@ export const DEFAULT_METRICS_RESPONSE = {
                         "_id": "683464b774f4c4971b90396d",
                         "email": "test@gmail.com",
                         "name": "Test siHEyDbWnhZpyOVCeudEdTVFKjQLIAAjJnU",
-                        "country": "Canada",
+                        "country": COUNTRIES.CANADA,
                         "city": "City OYAWUqyweLrWCIp",
                         "street": "Street C1BVyeK2J10s6KnQdsF70FUgtxbhw4Nsz",
                         "house": 324,
@@ -3236,7 +3236,7 @@ export const DEFAULT_METRICS_RESPONSE = {
                         "_id": "6831a905d006ba3d4762237f",
                         "email": "1748084993014Aleksey.Naumov99@yahoo.com",
                         "name": "Aleks VMgWyXdEmAi",
-                        "country": "Canada",
+                        "country": COUNTRIES.CANADA,
                         "city": "Test town Colorado",
                         "street": "492 Kings Highway",
                         "house": 2,
@@ -3285,7 +3285,7 @@ export const DEFAULT_METRICS_RESPONSE = {
                     ],
                     "delivery": {
                         "address": {
-                            "country": "Canada",
+                            "country": COUNTRIES.CANADA,
                             "city": "Test town Colorado",
                             "street": "492 Kings Highway",
                             "house": 2,
@@ -3342,7 +3342,7 @@ export const DEFAULT_METRICS_RESPONSE = {
                             "total_price": 81831,
                             "delivery": {
                                 "address": {
-                                    "country": "Canada",
+                                    "country": COUNTRIES.CANADA,
                                     "city": "Test town Colorado",
                                     "street": "492 Kings Highway",
                                     "house": 2,
@@ -3418,7 +3418,7 @@ export const DEFAULT_METRICS_RESPONSE = {
                             "total_price": 81831,
                             "delivery": {
                                 "address": {
-                                    "country": "Canada",
+                                    "country": COUNTRIES.CANADA,
                                     "city": "Test town Colorado",
                                     "street": "492 Kings Highway",
                                     "house": 2,
@@ -3494,7 +3494,7 @@ export const DEFAULT_METRICS_RESPONSE = {
                             "total_price": 81831,
                             "delivery": {
                                 "address": {
-                                    "country": "Canada",
+                                    "country": COUNTRIES.CANADA,
                                     "city": "Test town Colorado",
                                     "street": "492 Kings Highway",
                                     "house": 2,
@@ -3570,7 +3570,7 @@ export const DEFAULT_METRICS_RESPONSE = {
                             "total_price": 81831,
                             "delivery": {
                                 "address": {
-                                    "country": "Canada",
+                                    "country": COUNTRIES.CANADA,
                                     "city": "Test town Colorado",
                                     "street": "492 Kings Highway",
                                     "house": 2,
@@ -3712,7 +3712,7 @@ export const DEFAULT_METRICS_RESPONSE = {
                             "total_price": 81831,
                             "delivery": {
                                 "address": {
-                                    "country": "Canada",
+                                    "country": COUNTRIES.CANADA,
                                     "city": "Test town Colorado",
                                     "street": "492 Kings Highway",
                                     "house": 2,
@@ -3788,7 +3788,7 @@ export const DEFAULT_METRICS_RESPONSE = {
                             "total_price": 81831,
                             "delivery": {
                                 "address": {
-                                    "country": "Canada",
+                                    "country": COUNTRIES.CANADA,
                                     "city": "Test town Colorado",
                                     "street": "492 Kings Highway",
                                     "house": 2,
@@ -3864,7 +3864,7 @@ export const DEFAULT_METRICS_RESPONSE = {
                             "total_price": 81831,
                             "delivery": {
                                 "address": {
-                                    "country": "Canada",
+                                    "country": COUNTRIES.CANADA,
                                     "city": "Test town Colorado",
                                     "street": "492 Kings Highway",
                                     "house": 2,
@@ -3940,7 +3940,7 @@ export const DEFAULT_METRICS_RESPONSE = {
                             "total_price": 81831,
                             "delivery": {
                                 "address": {
-                                    "country": "Canada",
+                                    "country": COUNTRIES.CANADA,
                                     "city": "Test town Colorado",
                                     "street": "492 Kings Highway",
                                     "house": 2,
@@ -4864,7 +4864,7 @@ export const DEFAULT_METRICS_RESPONSE = {
                         "_id": "6831a905d006ba3d4762237f",
                         "email": "1748084993014Aleksey.Naumov99@yahoo.com",
                         "name": "Aleks VMgWyXdEmAi",
-                        "country": "Canada",
+                        "country": COUNTRIES.CANADA,
                         "city": "Test town Colorado",
                         "street": "492 Kings Highway",
                         "house": 2,
@@ -4922,7 +4922,7 @@ export const DEFAULT_METRICS_RESPONSE = {
                     ],
                     "delivery": {
                         "address": {
-                            "country": "Canada",
+                            "country": COUNTRIES.CANADA,
                             "city": "Test town Colorado",
                             "street": "492 Kings Highway",
                             "house": 2,
@@ -5004,7 +5004,7 @@ export const DEFAULT_METRICS_RESPONSE = {
                             "total_price": 5555,
                             "delivery": {
                                 "address": {
-                                    "country": "Canada",
+                                    "country": COUNTRIES.CANADA,
                                     "city": "Test town Colorado",
                                     "street": "492 Kings Highway",
                                     "house": 2,
@@ -5089,7 +5089,7 @@ export const DEFAULT_METRICS_RESPONSE = {
                             "total_price": 5555,
                             "delivery": {
                                 "address": {
-                                    "country": "Canada",
+                                    "country": COUNTRIES.CANADA,
                                     "city": "Test town Colorado",
                                     "street": "492 Kings Highway",
                                     "house": 2,
@@ -5174,7 +5174,7 @@ export const DEFAULT_METRICS_RESPONSE = {
                             "total_price": 5555,
                             "delivery": {
                                 "address": {
-                                    "country": "Canada",
+                                    "country": COUNTRIES.CANADA,
                                     "city": "Test town Colorado",
                                     "street": "492 Kings Highway",
                                     "house": 2,
@@ -5259,7 +5259,7 @@ export const DEFAULT_METRICS_RESPONSE = {
                             "total_price": 5555,
                             "delivery": {
                                 "address": {
-                                    "country": "Canada",
+                                    "country": COUNTRIES.CANADA,
                                     "city": "Test town Colorado",
                                     "street": "492 Kings Highway",
                                     "house": 2,
@@ -5344,7 +5344,7 @@ export const DEFAULT_METRICS_RESPONSE = {
                             "total_price": 5555,
                             "delivery": {
                                 "address": {
-                                    "country": "Canada",
+                                    "country": COUNTRIES.CANADA,
                                     "city": "Test town Colorado",
                                     "street": "492 Kings Highway",
                                     "house": 2,
@@ -5429,7 +5429,7 @@ export const DEFAULT_METRICS_RESPONSE = {
                             "total_price": 5555,
                             "delivery": {
                                 "address": {
-                                    "country": "Canada",
+                                    "country": COUNTRIES.CANADA,
                                     "city": "Test town Colorado",
                                     "street": "492 Kings Highway",
                                     "house": 2,
@@ -6189,7 +6189,7 @@ export const DEFAULT_METRICS_RESPONSE = {
                             "total_price": 5555,
                             "delivery": {
                                 "address": {
-                                    "country": "Canada",
+                                    "country": COUNTRIES.CANADA,
                                     "city": "Test town Colorado",
                                     "street": "492 Kings Highway",
                                     "house": 2,
@@ -6274,7 +6274,7 @@ export const DEFAULT_METRICS_RESPONSE = {
                             "total_price": 5555,
                             "delivery": {
                                 "address": {
-                                    "country": "Canada",
+                                    "country": COUNTRIES.CANADA,
                                     "city": "Test town Colorado",
                                     "street": "492 Kings Highway",
                                     "house": 2,
