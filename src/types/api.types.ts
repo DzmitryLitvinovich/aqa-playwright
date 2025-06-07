@@ -33,3 +33,5 @@ export interface IUser {
 export interface ILoginResponse extends IResponseFields {
   User: IUser;
 }
+
+export type productSortField = "createdOn" | "name" | "price" | "manufacturer";
