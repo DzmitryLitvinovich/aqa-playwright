@@ -20,8 +20,28 @@ export const allCustomersSchema = {
           createdOn: { type: 'string' },
           notes: { type: 'string' },
         },
-        required: ['_id', 'email', 'name', 'country', 'street', 'city', 'createdOn', 'house', 'flat', 'phone'],
+        required: [
+          '_id',
+          'email',
+          'name',
+          'country',
+          'street',
+          'city',
+          'createdOn',
+          'house',
+          'flat',
+          'phone',
+          'notes'
+        ],
       },
+    },
+    total: { type: 'number' },
+    page: { type: 'number' },
+    limit: { type: 'number' },
+    search: { type: 'string' },
+    country: {
+      type: 'array',
+      items: { type: 'string', enum: Object.values(COUNTRIES) }
     },
     sorting: {
       type: 'object',
@@ -34,5 +54,15 @@ export const allCustomersSchema = {
     IsSuccess: { type: 'boolean' },
     ErrorMessage: { type: ['string', 'null'] },
   },
-  required: ['Customers', 'sorting', 'IsSuccess', 'ErrorMessage'],
+  required: [
+    'Customers',
+    'total',
+    'page',
+    'limit',
+    'search',
+    'country',
+    'sorting',
+    'IsSuccess',
+    'ErrorMessage'
+  ],
 };
