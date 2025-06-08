@@ -18,6 +18,9 @@ export interface IResponseFields {
   ErrorMessage: string | null;
 }
 
+export type sortDirection = "asc" | "desc";
+export type customersSortField = "createdOn" | "email" | "name" | "country";
+
 export interface IUser {
   _id: string;
   username: string;
@@ -30,3 +33,5 @@ export interface IUser {
 export interface ILoginResponse extends IResponseFields {
   User: IUser;
 }
+
+export type productSortField = "createdOn" | "name" | "price" | "manufacturer";
